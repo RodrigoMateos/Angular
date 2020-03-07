@@ -1,0 +1,16 @@
+<h1>MODULO DE CURSOS</h1>
+<div *ngIf="detalleCurso(nombreURL);">
+    <button (click)="verDetalle()" *ngIf="detalle">Minimizar</button>
+    <button (click)="verDetalle()" *ngIf="!detalle">Informacion</button>
+
+    <div *ngIf="detalle">
+        <h2>Nombre: {{correcto.nombre}}</h2>
+        <h3>Realizado por: {{correcto.autor}} - {{correcto.precio}}€</h3>
+        <span>¿Que vamos a aprender?</span>
+        <ul *ngFor="let tec of correcto.tecnologias">
+            <li>{{tec}}</li>
+        </ul>
+    </div>
+</div>
+<button (click)="redirigir()">Go Home</button>
+

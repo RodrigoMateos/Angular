@@ -1,0 +1,21 @@
+<h2>¿Como contactar con nosotros?</h2>
+
+<!--<form #formContacto="ngForm" (ngSubmit)="onSubmit()">-->
+<form #formContacto="ngForm">
+    <label for="nombre">Nombre </label>
+    <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="usuario.nombre" required pattern="[a-zA-z]+"/><br/>
+    <span *ngIf="nombre.touched && !nombre.valid">Los nombre son obligatorios</span><br/>
+    <label for="Apellidos">Apellidos </label>
+    <input type="text" name="apellidos" #apellidos="ngModel" [(ngModel)]="usuario.apellidos" required pattern="[a-zA-z]+"/><br/>
+    <span *ngIf="apellidos.touched && !apellidos.valid">Los apellidos son obligatorios</span><br/>
+    <label for="email">Correo </label>
+    <input type="email" name="email" #email="ngModel" [(ngModel)]="usuario.email" required/><br/>
+    <span *ngIf="email.touched && !email.valid">El email es obligatorio</span><br/>
+    <label for="mensaje">Mensaje </label>
+    <textarea name="mensaje" #mensaje="ngModel" [(ngModel)]="usuario.mensaje" required></textarea><br/>
+    <span *ngIf="mensaje.touched && !mensaje.valid">El mensaje es obligatorio</span><br/>
+    <br/>
+ 
+    <input type="submit" name="Enviar" (click)="onSubmit()" [disabled]="!formContacto.form.valid"/>
+    <input type="submit" name="Limpiar" (click)="limpiarFormulario(formContacto)" value="Limpiar"/>
+</form>

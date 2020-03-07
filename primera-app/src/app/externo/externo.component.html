@@ -1,0 +1,15 @@
+<h2>Componente externo</h2>
+<h1>{{fecha | date:'fullDate'}}</h1>
+<div *ngIf="!user">Cagando...</div>
+
+<div *ngIf="user">
+    <p>{{user.first_name}}</p>
+    <img src="{{user.avatar}}" width="200px"/>
+</div>
+
+<input type="text" [(ngModel)]="userId" (keyup.enter)="cargarUsuario()"/>
+
+<div *ngIf="userWID">
+    <p>{{userWID.data.first_name}}</p>
+    <img src="{{userWID.data.avatar}}" width="200px"/>
+</div>

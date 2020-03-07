@@ -1,0 +1,15 @@
+<br>
+<button (click)="ocultarVideojuegos()" *ngIf="mostrar_videojuegos">Ocultar</button>
+<button (click)="ocultarVideojuegos()" *ngIf="!mostrar_videojuegos">Mostrar</button>
+
+<div *ngIf="mostrar_videojuegos">
+    <div [ngStyle]="{'background': config.fondo}">
+        <h2>{{titulo}}</h2>
+        <button (click)="cambiarTitulo()">Enviar</button>
+        <ul>
+            <li>FIFA</li>
+            <li>NBA 2K</li>
+            <li>GTA</li>
+        </ul>
+    </div>
+</div>
